@@ -16,7 +16,6 @@ type Props = {
 }
 
 export default function Home({product}:Props) {
-  console.log(product)
   return (
     <>
       <Head>
