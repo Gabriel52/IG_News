@@ -2,6 +2,7 @@ import { query as q } from 'faunadb'
 
 import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
+import GoogleProvider from "next-auth/providers/google";
 
 import { fauna } from '../../../services/fauna'
 
@@ -15,11 +16,23 @@ export default NextAuth({
                 params: { scope: "read:user" }
             }
         }),
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+            authorization: {
+                params: {
+                    prompt: "consent",
+                    access_type: "offline",
+                    response_type: "code"
+                }
+            }
+        })
         // ...add more providers here
     ],
     secret: process.env.SIGNING_KEY,
     callbacks: {
         async signIn({ user, account, profile }) {
+            console.log(account)
             const { email } = user
             try{
                 await fauna.query(

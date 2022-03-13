@@ -6,7 +6,7 @@ import { ID_PRODUCT_STRIP_SUBSCRIPTION } from '../../const';
 import { fauna } from '../../services/fauna';
 import { stripe } from '../../services/stripe';
 
-type User = {
+export type User = {
     ref: {
         id: string
     }

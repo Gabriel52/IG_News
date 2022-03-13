@@ -13,3 +13,7 @@ se torna um processo custoso para o banco de dados em si.
 ## Bancos que não precisam estabelecer um pull de conexão aberto
 * FaunaDB - HTTP
 * DynamoDB - AWS
+
+
+## Comando para inicializar o stripe-cli
+Ficar escutando o endpoint: stripe listen --forward-to localhost:3000/api/webhooks

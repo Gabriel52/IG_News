@@ -20,7 +20,7 @@ export const SignInButton = ():JSX.Element => {
         <button 
             onClick={(e) => {
                 e.preventDefault()
-                signIn('github')
+                signIn()
             }}
             type="button"
             className={styles.SignInButton} 
