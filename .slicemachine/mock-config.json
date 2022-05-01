@@ -1,0 +1,21 @@
+{
+  "_cts": {
+    "publication-custom-type": {
+      "Content": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "Title": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
+  },
+  "slices": {
+    "React": {}
+  }
+}

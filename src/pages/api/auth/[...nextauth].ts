@@ -32,7 +32,6 @@ export default NextAuth({
     secret: process.env.SIGNING_KEY,
     callbacks: {
         async signIn({ user, account, profile }) {
-            console.log(account)
             const { email } = user
             try{
                 await fauna.query(
@@ -63,14 +62,43 @@ export default NextAuth({
                 return false
             }
         },
-        async redirect({ url, baseUrl }) {
-            return baseUrl
+        async session({ session }) {
+            try {
+                
+                const userActiveSubscription = await fauna.query(
+                    q.Get(
+                        q.Intersection([
+                            q.Match(
+                                q.Index('subscription_by_user_ref'),
+                                q.Select(
+                                    "ref",
+                                    q.Get(
+                                        q.Match(
+                                            q.Index('user_by_email'),
+                                            q.Casefold(session.user.email)
+                                        )
+                                    )
+                                )
+                            ),
+                            q.Match(
+                                q.Index('subscription_by_status'),
+                                "active"
+                            )
+                        ])
+    
+                    )
+                )
+                return {
+                    ...session,
+                    activeSubscription: userActiveSubscription
+                }
+            } catch(err){
+                console.log(err)
+                return {
+                    ...session,
+                    activeSubscription: null
+                }
+            }
         },
-        async session({ session, user, token }) {
-            return session
-        },
-        async jwt({ token, user, account, profile, isNewUser }) {
-            return token
-        }
     }
 })

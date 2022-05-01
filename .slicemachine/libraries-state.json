@@ -1,0 +1,81 @@
+{
+  "slices": {
+    "components": {
+      "react": {
+        "library": "slices",
+        "id": "react",
+        "name": "React",
+        "description": "React",
+        "model": {
+          "id": "react",
+          "type": "SharedSlice",
+          "name": "React",
+          "description": "React",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "React",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "react",
+            "items": [],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Implement bleeding-edge e-services",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Nisi aliquip nisi ipsum ea veniam. Quis aute ut magna labore proident quis in non commodo est qui ullamco consequat non laborum.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "isDirectory": true,
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "C:\\Users\\YOGA 520\\Desktop\\Projects\\Rocketseat\\Ignite\\React\\chapter-3\\ignews\\slices\\React\\default\\preview.jpeg",
+            "width": 324,
+            "height": 155
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,6 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import styles from './styles.module.scss'
 export const SignInButton = ():JSX.Element => {
     const { data: session, status } = useSession()
-    
     return  session ? (
         <button 
             onClick={() => signOut()} 
@@ -13,7 +12,7 @@ export const SignInButton = ():JSX.Element => {
             type="button"
         >
             <FaGithub color="#04D361" />
-            Gabriel Brune
+            {session.user.name}
             <FiX color="#737380" className={styles.closeIcon}/>
         </button>
     ) : (
@@ -26,7 +25,7 @@ export const SignInButton = ():JSX.Element => {
             className={styles.SignInButton} 
         >
             <FaGithub color="#EBA417" />
-            Sign in with Github
+            Sign in
         </button>
 
     )

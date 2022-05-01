@@ -3,6 +3,7 @@ import { useSession, signIn } from "next-auth/react"
 
 import { api } from '../../services/api'
 import { getStripeJs } from '../../services/stripe-public'
+import { useRouter } from 'next/router'
 
 
 type Props = {
@@ -11,10 +12,14 @@ type Props = {
 
 export const SubscribeButton = ({ priceId }:Props):JSX.Element => {
     const { data: session, status } = useSession()
-    
+    const { push } = useRouter()
     const handleSubscribe = async () => {
         if(!session){
             signIn('github')
+            return
+        }
+        if(session?.activeSubscription){
+            push('/posts')
             return
         }
         try{

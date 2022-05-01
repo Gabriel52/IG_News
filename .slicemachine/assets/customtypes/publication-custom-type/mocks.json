@@ -1,0 +1,21 @@
+{
+  "id": "27570e47-27ed-4b07-bc15-00378a6b8d87",
+  "uid": "maxime-vero-temporibus",
+  "type": "publication-custom-type",
+  "data": {
+    "Title": [
+      {
+        "type": "paragraph",
+        "text": "Reprehenderit dolore cupidatat officia nulla consectetur tempor veniam aliqua adipisicing magna labore adipisicing adipisicing labore. Ipsum exercitation ipsum laboris minim est ullamco est velit aute nisi cupidatat tempor.",
+        "spans": []
+      }
+    ],
+    "Content": [
+      {
+        "type": "paragraph",
+        "text": "Aute veniam nisi occaecat consectetur et tempor est cillum est consequat deserunt occaecat occaecat elit. Laboris labore fugiat Lorem id amet et dolor. Non enim reprehenderit commodo pariatur in dolor veniam.",
+        "spans": []
+      }
+    ]
+  }
+}
